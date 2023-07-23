@@ -10,10 +10,12 @@
 #define MAX_RETRY 10
 
 unsigned int exponential_backoff(unsigned int retry, unsigned int max_retry) {
-    unsigned int base = 500;  // base in milliseconds
-    unsigned int multiplier = 2;
-    unsigned int wait_interval = base * (1 << (retry > 6 ? 6 : retry)); // Limit wait_interval to 8 seconds
-    return wait_interval > base ? base : wait_interval;
+    unsigned int base_ms = 500; // base in milliseconds，500 ms (0.5s)
+    unsigned int max_wait_interval_ms = 8000; // MAx waiting time is 8000ms (8s)
+
+    // implement the exponential backoff algorithm to calculate the actual interval waiting time (should be limited by themax_wait_interval_ms )
+    unsigned int wait_interval_ms = base_ms * (1 << (retry > 6 ? 6 : retry));
+    return (wait_interval_ms > max_wait_interval_ms) ? max_wait_interval_ms : wait_interval_ms;
 }
 
 int main() {

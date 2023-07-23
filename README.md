@@ -30,7 +30,7 @@
 
        If you need to check the IP for your container, you can use the below command:
 
-       > docker inspect \  -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container name or ID>
+       > docker inspect \  -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [container name or ID]
   
 3. In the (echo) server container:
    

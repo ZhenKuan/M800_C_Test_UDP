@@ -1,13 +1,8 @@
 # README
 
-#### 包含兩個部分的說明：
+> 包含   **Run the project** 和 **Explain the code** 兩個部分的說明。
 
-- [To Run the project](##To-Run-the-project:)
-
-- [Explain the code](##Explain-the-code:)
-
-
-## To Run the project:
+## Run the project:
 
 1. Open up 2 terminals, one for the echo server, and one for the client.
   

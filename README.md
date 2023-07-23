@@ -6,9 +6,33 @@
 
 ## Run the project:
 
-1. Open up 2 terminals, one for the echo server, and one for the client.
+1. Make sure your PC has installed Docker (I installed Docker on my M1 Mac).
+   
+    >Installed Docker from: https://www.docker.com/products/docker-desktop/
+    
+2. Open up the terminal, and create two *Docker containers* for the server and client.
+
+   - Use the below Command to easily launch a Debian 10 Linux server and mount this project into it at the same time.
+
+      > docker run -it -v /home/user/project:/source debian:10
+      
+       To demonstrate more clearly, I will name my Docker container "server" and "client" by the below command:
+
+      ```
+       docker run -it -v /Users/linzhengkuan/M800_C_Test_UDP:/source --name server debian:10
+      ```
+
+      , and
+
+      ```
+       docker run -it -v /Users/linzhengkuan/M800_C_Test_UDP:/source --name client debian:10
+      ```
+
+       If you need to check the IP for your container, you can use the below command:
+
+       > docker inspect \  -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container name or ID>
   
-2. For echo server terminal:
+3. In the (echo) server container:
    
    - Command 1.
    
@@ -26,7 +50,7 @@
        ./server
      ```
    
-3. For client terminal:
+4. In the client container:
    
    - Command 1.
    
@@ -42,7 +66,7 @@
        ./client
       ```
    
-4. After the above steps, you should see logs like "Received message from client: Hello, server! Attempt 1" on the server terminal, and echo message logs like "Received echo message: Hello, server! Attempt 1" on the client terminal.
+6. After the above steps, you should see logs like "Received message from client: Hello, server! Attempt 1" on the server terminal, and echo message logs like "Received echo message: Hello, server! Attempt 1" on the client terminal.
 
 
 ## Explain the code:

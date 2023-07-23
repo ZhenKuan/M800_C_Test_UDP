@@ -23,3 +23,5 @@ To Run the project:
        ./client
    
 5. After the above steps, you should see logs like "Received message from client: Hello, server! Attempt 1" on the server terminal, and echo message log like "Received echo message: Hello, server! Attempt 1" on the client terminal.
+
+6. I added one additional function, for the client to type in the message will be send to the server, you may see the modified code in the commit history on gitHub (modified files include server.c and client.c).

@@ -1,5 +1,7 @@
 # README
 
+> The Environment I used was Visual Code on M1 Mac, and the programs were written in C.
+>
 > 包含   **Run the project** 和 **Explain the code** 兩個部分的說明。
 
 ## Run the project:

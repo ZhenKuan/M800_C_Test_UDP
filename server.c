@@ -47,9 +47,10 @@ int main() {
             printf("Received message from client: %s\n", buffer);
             sendto(sockfd, buffer, dataSize, 0, (struct sockaddr *)&clientAddr, addr_size);
         }
+        // Clear the data buffer after receiving message from the client, so that the next time the client sends a message won't be disturb
+        memset(buffer, 0, BUFFER_SIZE);
     }
 
     close(sockfd);
     return 0;
 }
-

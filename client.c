@@ -36,10 +36,18 @@ int main() {
     serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
     serverAddr.sin_port = htons(SERVER_PORT);
 
+    // Clear the data buffer before receiving the user message
+    memset(buffer, 0, BUFFER_SIZE);
+
+    // User input for the message content
+    printf("Enter the message to send to the server: ");
+    fgets(buffer, BUFFER_SIZE, stdin);
+    buffer[strcspn(buffer, "\n")] = '\0';  // Remove the newline character from the input
+
     // Send UDP message with exponential backoff retries
     while (retry <= MAX_RETRY) {
         printf("Sending message to server: Attempt %d\n", retry + 1);
-        sprintf(buffer, "Hello, server! Attempt %d (message from client)", retry + 1);
+        //sprintf(buffer, "Hello, server! Attempt %d", retry + 1);
 
         sendto(sockfd, buffer, strlen(buffer), 0, (struct sockaddr *)&serverAddr, sizeof(serverAddr));
 

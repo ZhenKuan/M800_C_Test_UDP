@@ -19,18 +19,24 @@
        To demonstrate more clearly, I will name my Docker container "server" and "client" by the below command:
 
       ```
-       docker run -it -v /Users/linzhengkuan/M800_C_Test_UDP:/source --name server debian:10
+      docker run -it -v /Users/linzhengkuan/M800_C_Test_UDP:/source --name server debian:10
       ```
 
       , and
 
       ```
-       docker run -it -v /Users/linzhengkuan/M800_C_Test_UDP:/source --name client debian:10
+      docker run -it -v /Users/linzhengkuan/M800_C_Test_UDP:/source --name client debian:10
       ```
 
        If you need to check the IP for your container, you can use the below command:
 
        > docker inspect \  -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [container name or ID]
+
+   - Then, get into the project folder that was mounted in the container:
+
+     ```
+     cd /source
+     ```
   
 3. In the (echo) server container:
    

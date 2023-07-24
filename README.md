@@ -3,6 +3,8 @@
 > The Environment I used was Visual Code on M1 Mac, and the programs were written in C.
 >
 > 包含   **Run the project** 和 **Explain the code** 兩個部分的說明。
+>
+> See the Demo video through the link >> https://drive.google.com/file/d/1TtS1eshCg0epWPWWze4VNT7kVfpKpaBR/view?usp=sharing
 
 ## Run the project:
 
